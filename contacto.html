@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laboratorista vial Contacto</title>
+    <!-- Favicom -->
+    <link rel="apple-touch-icon" sizes="180x180" href="imagenes/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="imagenes/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="imagenes/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Estilos css -->
+    <link rel="stylesheet" href="css/estilos_laboratoristavial.css">
+
+    <!-- Fuentes de texto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<meta name="msapplication-tap-highlight" content="no">
+
+<!-- Enlaza Font Awesome -->
+<link rel="icon" href="ruta_al_favicon.ico" type="image/x-icon">
+
+<!-- Menu principal-->
+ <link href="objetivos.html">
+</head>
+<body style="height: 100%;">
+    <header>
+        <img src="imagenes/imagen_titular.jpg" alt="imagen_titular" style="height: 7em;">
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="objetivos.html">Objetivos</a></li>
+                <li><a href="experiencia.html">Experiencia</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <img src="imagenes/android-chrome-384x384.png" alt="logo" style="height:7em">
+    </header>
+
+    <main>
+        <article>
+            <section>
+                <div class="image-container">
+                    <img src="imagenes/Imagen de WhatsApp 11.jpg" alt="imgen_comino" style="filter: brightness(0.8);">
+                    <div class="text-overlay">
+                         <h1 style="letter-spacing: 12px; font-size: 68px;">Contacto</h1>
+                       
+                        <p>"«Nuestra participación en obras de alta complejidad nos permite entregar soluciones con garantías de seguridad y eficiencia»"</p>
+                    </div>
+                </div>
+            </section>
+
+            <section >
+                <div id="obj_gral">
+                    <h1 style="margin-bottom: 0.5em;">Contacto</h1>
+                    <hr style=" width: 50%;">
+                </div>
+                <form id="contactForm" class="formulario-contacto">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required>
+                
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                
+                    <button type="submit">Ingresar Mensaje</button>
+                </form>
+                
+
+                
+            </section>
+        </article>
+
+        <section id="seccion_abajo">   
+            <div id="image-container2">
+                <img src="imagenes/Imagen de WhatsApp 5.1.jpg" alt="camino2" style="filter: brightness(0.4);" style="border-radius: 10px;">
+                <div id="text-overlay2">
+                   
+                    <p style="font-size:1.2em">«El fundamento de tu camino, la garantía de tu obra»</p>
+                    <a href="index.html">Regresa a inicio</a>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+        <footer id="pie_global">
+            <small id="pie2">Copyright © 2024 | Powered by potofino61641@gmail.com</small>
+       </footer>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Previene que el formulario se envíe de forma tradicional
+    
+        // Recoge los datos del formulario
+        let formData = new FormData(this);
+    
+        // Envía los datos mediante fetch al archivo PHP
+        fetch('enviar.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            // Muestra el resultado del envío en un div
+            document.getElementById('resultado').innerHTML = data;
+        })
+        .catch(error => {
+            // Maneja errores
+            document.getElementById('resultado').innerHTML = "Hubo un error al enviar el mensaje.";
+            console.error('Error:', error);
+        });
+    });
+    
+</script>
+      
+</body>
+</html>

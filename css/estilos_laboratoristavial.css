@@ -1,0 +1,550 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* _______________________________________________________________________________________________ */
+
+header{
+    
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos de manera equitativa */
+    align-items: center; /* Alinea los elementos verticalmente */
+    padding: 10px 20px;
+    background-color: #090442;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+   
+}
+
+.menu ul li {
+    margin-right: 35px;
+    color: #eeedf3;
+}
+.menu ul li a{
+    color: #ddd;
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    font-size: 1.5em; /* Aumenta el tamaño del texto de los enlaces */
+}
+
+/* _______________________________________________________________________________________________ */
+
+/* Formato Página Inicio */
+.image-container {
+    position: relative;
+    width: 100%; /* La imagen y el contenedor cubren el 100% del ancho */
+    
+}
+
+.image-container img {
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción original de la imagen */
+    max-height: 400px; /* Ajusta el alto máximo de la imagen según desees */
+    object-fit: cover; /* Recorta la imagen si es necesario para que cubra el ancho */
+}
+.text-overlay {
+    font-family: 'Roboto', sans-serif;
+}
+.text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white; /* El color del texto sobre la imagen */
+    background: rgba(0, 0, 0, 0.3); /* Fondo semitransparente para mejorar la legibilidad del texto */
+    text-align: center;
+}
+
+
+.text-overlay h1, .text-overlay h2, .text-overlay p {
+    margin: 10px 0;
+}
+.text-overlay h1 {
+    font-size:1.5 em;
+}
+.text-overlay h1 {
+    font-size: 48px; /* Ajusta el tamaño del texto según tus necesidades */
+    letter-spacing: 2px; /* Aumenta el espacio entre las letras */
+    margin: 10px 0; /* Ajusta el margen si es necesario */
+}
+
+.text-overlay h2 {
+    font-size: 36px; /* También puedes ajustar el tamaño del h2 */
+    letter-spacing: 1.5px; /* Espacio entre letras para h2 */
+    margin: 8px 0;
+}
+
+.text-overlay p {
+    font-size: 18px; /* Tamaño del texto para el párrafo */
+    letter-spacing: 1px; /* Opcional: espacio entre letras para el párrafo */
+    margin: 6px 0;
+}
+
+#tit1 {
+    padding:1em 0 1em 0;
+}
+#tit1 h1 {
+    font-size: 38px;
+    letter-spacing: 4px;
+    margin: 10px 0;
+    text-align: center; /* Centra el h1 */
+    position: relative; /* Necesario para posicionar la línea con ::after */
+}
+
+#linea1 {
+    content: '';
+    display: block;
+    width: 50%; /* Ajusta el ancho de la línea al 50% */
+    height: 2px; /* Ajusta el grosor de la línea */
+    background-color: white; /* Color de la línea */
+    margin: 10px auto 0; /* Centra la línea con auto y ajusta el margen */
+}
+
+
+#desc_servicios {
+    display: flex; /* Organiza los elementos en una fila */
+    justify-content: space-between; /* Añade espacio igual entre los divs */
+    align-items: stretch; /* Asegura que todos los divs tengan el mismo alto */
+    
+    padding: 20px;
+    width: 100%; 
+}
+.box {
+    width: 30%; /* Cada div ocupará el 30% del ancho del contenedor */
+    background-color: lightgray; /* Color de fondo para diferenciar cada div */
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+    object-fit: contain; /* Hace que la imagen se ajuste dentro del contenedor sin recortar */
+}
+.box img {
+    width: 90%;
+    height: 400px;
+    object-fit: cover; /* Ajusta cómo se recorta la imagen si es necesario */
+}
+
+/* _______________________________________________________________________________________________ */
+
+
+body {
+    margin: 0;
+   
+}
+
+#comem {
+    display: flex; /* Cambiamos a flexbox para un mejor control */
+    justify-content: center; /* Centra el div hijo horizontalmente */
+    align-items: center; /* Centra el div hijo verticalmente */
+    background-color: rgb(243, 248, 247);
+   
+}
+
+#comentario {
+    width: 50%; /* Tamaño del div contenedor */
+    text-align: center; /* Centra el texto dentro del div */
+    display: flex; /* Flexbox para centrar los elementos hijos */
+    flex-direction: column; /* Coloca los elementos en columna */
+    justify-content: center; /* Centra verticalmente los elementos dentro del div */
+    align-items: center; /* Centra horizontalmente los elementos dentro del div */
+}
+
+#comentario p {
+    font-size: 50px; /* Ajusta el tamaño de la comilla si lo necesitas */
+    margin: 0; /* Elimina el margen extra */
+    color: #8b8181;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#comentario h1 {
+    margin-top: 10px; /* Añade un poco de margen superior si es necesario */
+    font-size: 1.4em;
+    letter-spacing: 0.1em;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    justify-content: space-between;
+    text-justify: auto;
+    color: #423d3d;
+    line-height: 1.5; /* Aumenta el espacio entre líneas */
+}
+#comentario img {
+   
+    border-radius: 40%; /* Ajusta el radio de las esquinas */
+    margin-bottom: 0.3em;
+}
+
+/* _______________________________________________________________________________________________ */
+
+#pie_global {
+    background-color: #18023f;
+    text-align: center; /* Centra el texto dentro del div */
+    display: flex; /* Flexbox para centrar los elementos hijos */
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    margin-top: 2em;
+    flex-direction: column; /* Coloca los elementos en columna */
+    justify-content: center; /* Centra verticalmente los elementos dentro del div */
+    align-items: center; /* Centra horizontalmente los elementos dentro del div */
+    min-height: 1em;
+}
+#pie2 {
+    color: #fff;
+    
+}
+
+/* _______________________________________________________________________________________________ */
+
+#seccion_abajo {
+    position: relative;
+    width: 100%;
+    padding: 2em;
+}
+
+#image-container2 {
+    position: relative;
+    width: 100%;
+}
+
+#image-container2 img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    object-position: 1% 62%;
+}
+
+#text-overlay2 {
+    position: absolute;
+    top: -7.5em;
+    left: 1.5em;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.0); /* 95% de transparencia */
+    color: white;
+    text-align: center;
+    margin-block: 3em;
+}
+
+#text-overlay2 h1,
+#text-overlay2 p,
+#text-overlay2 button {
+    margin: 2em 0 0 0;
+}
+
+#text-overlay2 h1 {
+    font-size: 4em;
+    letter-spacing: 4px;
+    margin: 10px 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#text-overlay2 a {
+    font-size: 20px; /* Tamaño de fuente mayor */
+    padding: 10px 20px; /* Espaciado interno (relleno) para aumentar el tamaño del enlace */
+    border: 2px solid black; /* Borde de color negro con ancho suave */
+    border-radius: 15px; /* Esquinas redondeadas */
+    color: #333; /* Color del texto sobrio */
+    background-color: #f0f0f0; /* Fondo suave y destacado */
+    text-decoration: none; /* Quitar subrayado del enlace */
+    display: inline-block; /* Para que se comporte más como un botón */
+    transition: background-color 0.3s ease; /* Transición suave en el cambio de color */
+
+    position: absolute; /* Posicionamiento absoluto */
+    bottom: 10px; /* Lo posiciona a 10px del borde inferior del contenedor */
+    left: 50%; /* Centra horizontalmente el enlace */
+    transform: translateX(-50%); /* Ajuste para centrar completamente */
+}
+#text-overlay2 a:hover {
+    background-color: #ddd; /* Cambia a un color ligeramente más oscuro cuando el mouse está sobre el enlace */
+}
+
+
+/* _______________________________________________________________________________________________ */
+#obj_gral {
+    text-align: center;
+    margin-bottom:3em;
+    margin-top: 2em;
+}
+
+#obj_gral h1 {
+    font-size: 2.2em;
+    letter-spacing: 10px;
+    margin: 0 auto;      /* Centra la línea en el contenedor */
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: oblique;
+}
+#obj_gral  hr {
+    width: 50%;          /* Ajusta el ancho de la línea */
+    height: 3px;         /* Ajusta el grosor de la línea */
+    background-color: #3498db; /* Cambia el color de la línea */
+    border: none;        /* Elimina el borde predeterminado */
+    margin: 0 auto;      /* Centra la línea en el contenedor */
+}
+/* _______________________________________________________________________________________________ */
+
+#parr_obj {
+    display: flex;
+    align-items: stretch;  /* Asegura que los elementos ocupen la misma altura */
+    margin-bottom: 2em;
+    width: 95%;
+    margin-left: 1em;
+  }
+
+  #parr_obj img {
+    width: auto;           /* Mantiene la proporción de la imagen */
+    height: auto;          /* Permite ajustar la altura para que se extienda según el contenido */
+    max-height: 100%;      /* Asegura que la imagen no exceda la altura de los párrafos */
+    margin-right: 20px;    /* Espaciado entre la imagen y los párrafos */
+    border-radius: 10px;    /* Radio en las esquinas */
+    border: 1px solid black; /* Borde sutil de color negro */
+  }
+
+  #parr_obj div {
+    display: flex;
+    flex-direction: column; /* Alinea los párrafos verticalmente */
+    justify-content: space-between; /* Distribuye el espacio entre los párrafos */
+  }
+
+  .parrafo {
+    margin: 10px 0;        /* Ajusta los márgenes de los párrafos */
+    text-align: justify;    /* Alinea el texto de los párrafos de manera justificada */
+    text-indent: 20px;      /* Agrega una sangría al inicio de cada párrafo */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  /* _______________________________________________________________________________________________ */
+
+  #ob {
+    margin-left: 1em;
+    
+  }
+  #object {
+    display: flex;
+    align-items: stretch;  /* Asegura que los elementos ocupen la misma altura */
+    margin-bottom: 2em;
+    width: 95%;
+    margin-left: 1em;
+    margin-right: 1em;
+    text-align: justify;
+  }
+
+  #object ul {
+    margin-right: 1.5em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  #object ul li{
+    margin-bottom: 0.5em;
+  }
+  #Tit_objet {
+    font-size: 1.3em;
+    letter-spacing: 0.3em;
+    margin-bottom: 1em;
+  }
+
+  #object img {
+    width: 55%;           /* Mantiene la proporción de la imagen */
+    height: auto;          /* Permite ajustar la altura para que se extienda según el contenido */
+    max-height: 80%;      /* Asegura que la imagen no exceda la altura de los párrafos */
+    margin-right: 20px;    /* Espaciado entre la imagen y los párrafos */
+    border-radius: 10px;    /* Radio en las esquinas */
+    
+  }
+/* _______________________________________________________________________________________________ */
+
+#obj1 {
+    display: flex;
+    align-items: stretch;  /* Asegura que los elementos ocupen la misma altura */
+    margin-bottom: 2em;
+    width: 95%;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 2em;
+}
+.object {
+    display: flex;
+    align-items: stretch;  /* Asegura que los elementos ocupen la misma altura */
+    margin-bottom: 2em;
+    width: 95%;
+    margin-left: 1em;
+    margin-right: 1em;
+    text-align: justify;
+    margin-bottom: 2.5em;
+}
+
+.object img {
+    width: 65%;           /* Mantiene la proporción de la imagen */
+    height: auto;          /* Permite ajustar la altura para que se extienda según el contenido */
+    max-height: 80%;      /* Asegura que la imagen no exceda la altura de los párrafos */
+    margin-right: 20px;    /* Espaciado entre la imagen y los párrafos */
+    border-radius: 10px;    /* Radio en las esquinas */
+}
+
+.object ul {
+    margin-right: 1.5em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.object ul li {
+    margin-bottom: 0.5em;
+}
+.ob1 hr {
+    width: 90%;          /* Ajusta el ancho de la línea */
+    height: 3px;         /* Ajusta el grosor de la línea */
+    background-color: #3498db; /* Cambia el color de la línea */
+    border: none;        /* Elimina el borde predeterminado */
+    margin: 0 auto;      /* Centra la línea en el contenedor */
+}
+
+#parr_obj  ul {
+    margin-right: 1.5em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#parr_obj  ul li {
+    margin-bottom: 0.5em;
+}
+/* _______________________________________________________________________________________________ */
+/* __________________________________Servicios_______________________________________________ */
+
+#servicios_1 {
+    width: 95%;
+    align-items: center; /* Centra horizontalmente los elementos dentro del div */
+    justify-content: center; /* Centra verticalmente los elementos dentro del div */
+    margin-left: 2em;
+}
+#servicios_2 {
+    display: flex; /* Organiza los elementos en una fila */
+    justify-content: space-between; /* Añade espacio igual entre los divs */
+    align-items: stretch; /* Asegura que todos los divs tengan el mismo alto */
+    background-color: #ddd;
+    padding: 20px;
+    width: 100%; 
+    border-radius: 2em;
+    border: 1px solid #aa8bf3;
+    
+}
+.h2_servicio {
+    margin-bottom: 1em;
+    margin-top: 1em;
+    letter-spacing: 0.2em; /* Aumenta el espacio entre las letras */
+}
+.p_servicio {
+    
+    text-justify: justify;
+}
+
+#servicios_3 {
+    display: flex; /* Organiza los elementos en una fila */
+    justify-content: space-between; /* Añade espacio igual entre los divs */
+    align-items: stretch; /* Asegura que todos los divs tengan el mismo alto */
+    background-color: #ddd;
+    padding: 20px;
+    width: 100%; 
+    border-radius: 2em;
+    border: 1px solid #aa8bf3;
+
+    
+}
+.img_servicio {
+   
+    width: 100%; /* Hace que la imagen ocupe el 100% del ancho del div */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: contain; /* Asegura que toda la imagen sea visible sin recortar */
+    max-width: 100%; /* Limita el tamaño para que no exceda el contenedor */
+    border-radius: 3em;
+}
+
+/* _______________________________________________________________________________________________ */
+/* __________________________________ Contacto ______________________________________________ */
+.formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    width: 70%; /* Ajusta el ancho según tus necesidades */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-contacto label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.formulario-contacto input, 
+.formulario-contacto textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.formulario-contacto button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formulario-contacto button:hover {
+    background-color: #45a049;
+}
+
+
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  .whatsapp-float img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .whatsapp-float img:hover {
+    transform: scale(1.1);
+  }
+  
+/* _______________________________________________________________________________________________ */
+/* __________________________________ Mi boratorio ______________________________________________ */
+
+  #ingresarAlMenu {
+    display: flex;
+    flex-direction: column;
+    width: 70%; /* Ajusta el ancho según tus necesidades */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }

@@ -3,7 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>laboratorista vial Contacto</title>
+    <title>Contacto | Laboratorista Vial</title>
+    <meta name="description" content="Contacta a Laboratorista Vial Clase A para cotizar servicios de control de calidad en obras viales, ensayes y asesoria tecnica especializada.">
+    <meta name="keywords" content="contacto laboratorista vial, cotizar control de calidad vial, asesoria obras viales">
+    <meta name="author" content="Ivonne E Reyes G.">
+    <meta name="robots" content="index,follow">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CL">
+    <meta property="og:title" content="Contacto | Laboratorista Vial Clase A">
+    <meta property="og:description" content="Solicita asesoria tecnica para tu proyecto vial y recibe atencion por WhatsApp.">
+    <meta property="og:image" content="imagenes/imagen_titular.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <!-- Favicom -->
     <link rel="apple-touch-icon" sizes="180x180" href="imagenes/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="imagenes/favicon-32x32.png">
@@ -31,9 +41,9 @@
 <!-- Menu principal-->
  <link href="objetivos.html">
 </head>
-<body style="height: 100%;">
+<body>
     <header>
-        <img src="imagenes/imagen_titular.jpg" alt="imagen_titular" style="height: 7em;">
+        <img src="imagenes/imagen_titular.jpg" alt="Laboratorista vial">
         <nav class="menu">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -43,7 +53,7 @@
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
-        <img src="imagenes/android-chrome-384x384.png" alt="logo" style="height:7em">
+        <img src="imagenes/android-chrome-384x384.png" alt="Logo">
     </header>
 
     <main>
@@ -52,17 +62,16 @@
                 <div class="image-container">
                     <img src="imagenes/Imagen de WhatsApp 11.jpg" alt="imgen_comino" style="filter: brightness(0.8);">
                     <div class="text-overlay">
-                         <h1 style="letter-spacing: 12px; font-size: 68px;">Contacto</h1>
-                       
-                        <p>"«Nuestra participación en obras de alta complejidad nos permite entregar soluciones con garantías de seguridad y eficiencia»"</p>
+                         <h1>Contacto</h1>
+                        <p>Conversemos tu proyecto y define un plan tecnico claro para construir con certeza.</p>
                     </div>
                 </div>
             </section>
 
             <section >
                 <div id="obj_gral">
-                    <h1 style="margin-bottom: 0.5em;">Contacto</h1>
-                    <hr style=" width: 50%;">
+                    <h1>Solicita asesoria</h1>
+                    <hr>
                 </div>
                 <form id="contactForm" class="formulario-contacto">
                     <label for="nombre">Nombre:</label>
@@ -77,11 +86,9 @@
                     <label for="mensaje">Mensaje:</label>
                     <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
                 
-                    <button type="submit">Ingresar Mensaje</button>
+                    <button type="submit">Enviar por WhatsApp</button>
                 </form>
-                
-
-                
+                <div id="resultado" aria-live="polite"></div>
             </section>
         </article>
 
@@ -90,7 +97,7 @@
                 <img src="imagenes/Imagen de WhatsApp 5.1.jpg" alt="camino2" style="filter: brightness(0.4);" style="border-radius: 10px;">
                 <div id="text-overlay2">
                    
-                    <p style="font-size:1.2em">«El fundamento de tu camino, la garantía de tu obra»</p>
+                    <p>Calidad documentada para obras que inspiran confianza.</p>
                     <a href="index.html">Regresa a inicio</a>
                     
                 </div>
@@ -98,34 +105,9 @@
         </section>
     </main>
         <footer id="pie_global">
-            <small id="pie2">Copyright © 2024 | Powered by potofino61641@gmail.com</small>
+            <small id="pie2">Copyright © 2026 | Laboratorista Vial Clase A</small>
        </footer>
-
-<script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Previene que el formulario se envíe de forma tradicional
-    
-        // Recoge los datos del formulario
-        let formData = new FormData(this);
-    
-        // Envía los datos mediante fetch al archivo PHP
-        fetch('enviar.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.text())
-        .then(data => {
-            // Muestra el resultado del envío en un div
-            document.getElementById('resultado').innerHTML = data;
-        })
-        .catch(error => {
-            // Maneja errores
-            document.getElementById('resultado').innerHTML = "Hubo un error al enviar el mensaje.";
-            console.error('Error:', error);
-        });
-    });
-    
-</script>
+<script src="js/main.js"></script>
       
 </body>
 </html>

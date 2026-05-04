@@ -1,550 +1,426 @@
 
+:root {
+    --color-bg: #f5f8fc;
+    --color-surface: #ffffff;
+    --color-primary: #102a71;
+    --color-primary-soft: #3559c7;
+    --color-accent: #0d9f55;
+    --color-text: #1f2a3a;
+    --color-text-soft: #5a667a;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --shadow-card: 0 16px 32px rgba(16, 42, 113, 0.12);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body, html {
-    height: 100%;
-    font-family: Arial, sans-serif;
-}
-body, html {
-    height: 100%;
-    font-family: Arial, sans-serif;
+html,
+body {
+    min-height: 100%;
+    font-family: "Open Sans", Arial, sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
 }
 
-/* _______________________________________________________________________________________________ */
+img {
+    max-width: 100%;
+    display: block;
+}
 
-header{
-    
-    display: flex;
-    justify-content: space-between; /* Distribuye los elementos de manera equitativa */
-    align-items: center; /* Alinea los elementos verticalmente */
-    padding: 10px 20px;
-    background-color: #090442;
+main {
+    width: min(1160px, 94%);
+    margin: 0 auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    display: grid;
+    grid-template-columns: 72px 1fr 72px;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 1.5rem;
+    background: linear-gradient(90deg, #07184f, #102a71);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+}
+
+header > img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.65);
 }
 
 .menu ul {
-    display: flex;
     list-style: none;
-    margin: 0;
-    padding: 0;
-   
-}
-
-.menu ul li {
-    margin-right: 35px;
-    color: #eeedf3;
-}
-.menu ul li a{
-    color: #ddd;
-    text-decoration: none; /* Elimina el subrayado de los enlaces */
-    font-size: 1.5em; /* Aumenta el tamaño del texto de los enlaces */
-}
-
-/* _______________________________________________________________________________________________ */
-
-/* Formato Página Inicio */
-.image-container {
-    position: relative;
-    width: 100%; /* La imagen y el contenedor cubren el 100% del ancho */
-    
-}
-
-.image-container img {
-    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
-    height: auto; /* Mantiene la proporción original de la imagen */
-    max-height: 400px; /* Ajusta el alto máximo de la imagen según desees */
-    object-fit: cover; /* Recorta la imagen si es necesario para que cubra el ancho */
-}
-.text-overlay {
-    font-family: 'Roboto', sans-serif;
-}
-.text-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white; /* El color del texto sobre la imagen */
-    background: rgba(0, 0, 0, 0.3); /* Fondo semitransparente para mejorar la legibilidad del texto */
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.menu ul li a {
+    display: inline-block;
+    color: #ecf0ff;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 0.65rem 1rem;
+    border-radius: 999px;
+    transition: 0.25s ease;
+}
+
+.menu ul li a:hover,
+.menu ul li a.active {
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+}
+
+.image-container,
+#image-container2 {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+.image-container img,
+#image-container2 img {
+    width: 100%;
+    min-height: 360px;
+    max-height: 440px;
+    object-fit: cover;
+}
+
+.text-overlay,
+#text-overlay2 {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
     text-align: center;
+    padding: 2.2rem;
+    color: #ffffff;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(3, 13, 34, 0.72));
 }
 
-
-.text-overlay h1, .text-overlay h2, .text-overlay p {
-    margin: 10px 0;
-}
-.text-overlay h1 {
-    font-size:1.5 em;
-}
-.text-overlay h1 {
-    font-size: 48px; /* Ajusta el tamaño del texto según tus necesidades */
-    letter-spacing: 2px; /* Aumenta el espacio entre las letras */
-    margin: 10px 0; /* Ajusta el margen si es necesario */
+.text-overlay h1,
+#text-overlay2 h1 {
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
 }
 
 .text-overlay h2 {
-    font-size: 36px; /* También puedes ajustar el tamaño del h2 */
-    letter-spacing: 1.5px; /* Espacio entre letras para h2 */
-    margin: 8px 0;
+    font-size: clamp(1.1rem, 2.3vw, 1.7rem);
+    font-weight: 700;
 }
 
-.text-overlay p {
-    font-size: 18px; /* Tamaño del texto para el párrafo */
-    letter-spacing: 1px; /* Opcional: espacio entre letras para el párrafo */
-    margin: 6px 0;
+.text-overlay p,
+#text-overlay2 p {
+    max-width: 760px;
+    margin: 0.8rem auto 0;
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    line-height: 1.55;
 }
 
-#tit1 {
-    padding:1em 0 1em 0;
-}
-#tit1 h1 {
-    font-size: 38px;
-    letter-spacing: 4px;
-    margin: 10px 0;
-    text-align: center; /* Centra el h1 */
-    position: relative; /* Necesario para posicionar la línea con ::after */
-}
-
-#linea1 {
-    content: '';
-    display: block;
-    width: 50%; /* Ajusta el ancho de la línea al 50% */
-    height: 2px; /* Ajusta el grosor de la línea */
-    background-color: white; /* Color de la línea */
-    margin: 10px auto 0; /* Centra la línea con auto y ajusta el margen */
-}
-
-
-#desc_servicios {
-    display: flex; /* Organiza los elementos en una fila */
-    justify-content: space-between; /* Añade espacio igual entre los divs */
-    align-items: stretch; /* Asegura que todos los divs tengan el mismo alto */
-    
-    padding: 20px;
-    width: 100%; 
-}
-.box {
-    width: 30%; /* Cada div ocupará el 30% del ancho del contenedor */
-    background-color: lightgray; /* Color de fondo para diferenciar cada div */
+#tit1,
+#obj_gral {
     text-align: center;
-    padding: 10px;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
-    object-fit: contain; /* Hace que la imagen se ajuste dentro del contenedor sin recortar */
+    margin: 2.4rem auto 1.4rem;
 }
+
+#tit1 h1,
+#obj_gral h1,
+#Tit_objet h1 {
+    font-size: clamp(1.7rem, 3vw, 2.45rem);
+    letter-spacing: 0.05em;
+}
+
+#linea1,
+#obj_gral hr,
+.ob1 hr {
+    width: min(360px, 72%);
+    margin: 0.7rem auto 0;
+    border: 0;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #1f56ff, #66b6ff);
+}
+
+#desc_servicios,
+#servicios_2,
+#servicios_3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.2rem;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.box {
+    background: var(--color-surface);
+    border: 1px solid #dce5f7;
+    border-radius: var(--radius-md);
+    padding: 1.15rem;
+    box-shadow: 0 8px 18px rgba(21, 33, 62, 0.08);
+}
+
 .box img {
-    width: 90%;
-    height: 400px;
-    object-fit: cover; /* Ajusta cómo se recorta la imagen si es necesario */
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 11px;
 }
 
-/* _______________________________________________________________________________________________ */
+.box h2,
+.h2_servicio {
+    margin: 1rem 0 0.7rem;
+    font-size: 1.28rem;
+    color: var(--color-primary);
+}
 
-
-body {
-    margin: 0;
-   
+.box p,
+.parrafo {
+    line-height: 1.65;
+    text-align: justify;
+    color: var(--color-text-soft);
 }
 
 #comem {
-    display: flex; /* Cambiamos a flexbox para un mejor control */
-    justify-content: center; /* Centra el div hijo horizontalmente */
-    align-items: center; /* Centra el div hijo verticalmente */
-    background-color: rgb(243, 248, 247);
-   
+    margin-top: 2rem;
 }
 
 #comentario {
-    width: 50%; /* Tamaño del div contenedor */
-    text-align: center; /* Centra el texto dentro del div */
-    display: flex; /* Flexbox para centrar los elementos hijos */
-    flex-direction: column; /* Coloca los elementos en columna */
-    justify-content: center; /* Centra verticalmente los elementos dentro del div */
-    align-items: center; /* Centra horizontalmente los elementos dentro del div */
+    width: min(900px, 100%);
+    background: #ffffff;
+    border: 1px solid #dbe2f3;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-card);
 }
 
 #comentario p {
-    font-size: 50px; /* Ajusta el tamaño de la comilla si lo necesitas */
-    margin: 0; /* Elimina el margen extra */
-    color: #8b8181;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    color: #7f8aa1;
 }
 
 #comentario h1 {
-    margin-top: 10px; /* Añade un poco de margen superior si es necesario */
-    font-size: 1.4em;
-    letter-spacing: 0.1em;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    justify-content: space-between;
-    text-justify: auto;
-    color: #423d3d;
-    line-height: 1.5; /* Aumenta el espacio entre líneas */
+    font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+    font-family: "Roboto", Arial, sans-serif;
+    color: var(--color-text);
+    line-height: 1.7;
 }
+
 #comentario img {
-   
-    border-radius: 40%; /* Ajusta el radio de las esquinas */
-    margin-bottom: 0.3em;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 1rem auto 0.4rem;
 }
 
-/* _______________________________________________________________________________________________ */
-
-#pie_global {
-    background-color: #18023f;
-    text-align: center; /* Centra el texto dentro del div */
-    display: flex; /* Flexbox para centrar los elementos hijos */
-    padding-top: 0.7em;
-    padding-bottom: 0.7em;
-    margin-top: 2em;
-    flex-direction: column; /* Coloca los elementos en columna */
-    justify-content: center; /* Centra verticalmente los elementos dentro del div */
-    align-items: center; /* Centra horizontalmente los elementos dentro del div */
-    min-height: 1em;
-}
+small,
 #pie2 {
-    color: #fff;
-    
+    color: #e6ebfa;
 }
-
-/* _______________________________________________________________________________________________ */
 
 #seccion_abajo {
-    position: relative;
-    width: 100%;
-    padding: 2em;
-}
-
-#image-container2 {
-    position: relative;
-    width: 100%;
-}
-
-#image-container2 img {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-    object-fit: cover;
-    object-position: 1% 62%;
+    margin: 2.3rem 0 0.7rem;
 }
 
 #text-overlay2 {
-    position: absolute;
-    top: -7.5em;
-    left: 1.5em;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.0); /* 95% de transparencia */
-    color: white;
-    text-align: center;
-    margin-block: 3em;
+    align-content: center;
 }
 
-#text-overlay2 h1,
-#text-overlay2 p,
-#text-overlay2 button {
-    margin: 2em 0 0 0;
-}
-
-#text-overlay2 h1 {
-    font-size: 4em;
-    letter-spacing: 4px;
-    margin: 10px 0;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
 #text-overlay2 a {
-    font-size: 20px; /* Tamaño de fuente mayor */
-    padding: 10px 20px; /* Espaciado interno (relleno) para aumentar el tamaño del enlace */
-    border: 2px solid black; /* Borde de color negro con ancho suave */
-    border-radius: 15px; /* Esquinas redondeadas */
-    color: #333; /* Color del texto sobrio */
-    background-color: #f0f0f0; /* Fondo suave y destacado */
-    text-decoration: none; /* Quitar subrayado del enlace */
-    display: inline-block; /* Para que se comporte más como un botón */
-    transition: background-color 0.3s ease; /* Transición suave en el cambio de color */
-
-    position: absolute; /* Posicionamiento absoluto */
-    bottom: 10px; /* Lo posiciona a 10px del borde inferior del contenedor */
-    left: 50%; /* Centra horizontalmente el enlace */
-    transform: translateX(-50%); /* Ajuste para centrar completamente */
+    margin-top: 1.2rem;
+    justify-self: center;
+    padding: 0.9rem 1.4rem;
+    border-radius: 999px;
+    background: var(--color-accent);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s ease, background 0.25s ease;
 }
+
 #text-overlay2 a:hover {
-    background-color: #ddd; /* Cambia a un color ligeramente más oscuro cuando el mouse está sobre el enlace */
+    background: #0b8a4a;
+    transform: translateY(-2px);
 }
 
-
-/* _______________________________________________________________________________________________ */
-#obj_gral {
-    text-align: center;
-    margin-bottom:3em;
-    margin-top: 2em;
-}
-
-#obj_gral h1 {
-    font-size: 2.2em;
-    letter-spacing: 10px;
-    margin: 0 auto;      /* Centra la línea en el contenedor */
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-style: oblique;
-}
-#obj_gral  hr {
-    width: 50%;          /* Ajusta el ancho de la línea */
-    height: 3px;         /* Ajusta el grosor de la línea */
-    background-color: #3498db; /* Cambia el color de la línea */
-    border: none;        /* Elimina el borde predeterminado */
-    margin: 0 auto;      /* Centra la línea en el contenedor */
-}
-/* _______________________________________________________________________________________________ */
-
-#parr_obj {
-    display: flex;
-    align-items: stretch;  /* Asegura que los elementos ocupen la misma altura */
-    margin-bottom: 2em;
-    width: 95%;
-    margin-left: 1em;
-  }
-
-  #parr_obj img {
-    width: auto;           /* Mantiene la proporción de la imagen */
-    height: auto;          /* Permite ajustar la altura para que se extienda según el contenido */
-    max-height: 100%;      /* Asegura que la imagen no exceda la altura de los párrafos */
-    margin-right: 20px;    /* Espaciado entre la imagen y los párrafos */
-    border-radius: 10px;    /* Radio en las esquinas */
-    border: 1px solid black; /* Borde sutil de color negro */
-  }
-
-  #parr_obj div {
-    display: flex;
-    flex-direction: column; /* Alinea los párrafos verticalmente */
-    justify-content: space-between; /* Distribuye el espacio entre los párrafos */
-  }
-
-  .parrafo {
-    margin: 10px 0;        /* Ajusta los márgenes de los párrafos */
-    text-align: justify;    /* Alinea el texto de los párrafos de manera justificada */
-    text-indent: 20px;      /* Agrega una sangría al inicio de cada párrafo */
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  }
-
-  /* _______________________________________________________________________________________________ */
-
-  #ob {
-    margin-left: 1em;
-    
-  }
-  #object {
-    display: flex;
-    align-items: stretch;  /* Asegura que los elementos ocupen la misma altura */
-    margin-bottom: 2em;
-    width: 95%;
-    margin-left: 1em;
-    margin-right: 1em;
-    text-align: justify;
-  }
-
-  #object ul {
-    margin-right: 1.5em;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  }
-  #object ul li{
-    margin-bottom: 0.5em;
-  }
-  #Tit_objet {
-    font-size: 1.3em;
-    letter-spacing: 0.3em;
-    margin-bottom: 1em;
-  }
-
-  #object img {
-    width: 55%;           /* Mantiene la proporción de la imagen */
-    height: auto;          /* Permite ajustar la altura para que se extienda según el contenido */
-    max-height: 80%;      /* Asegura que la imagen no exceda la altura de los párrafos */
-    margin-right: 20px;    /* Espaciado entre la imagen y los párrafos */
-    border-radius: 10px;    /* Radio en las esquinas */
-    
-  }
-/* _______________________________________________________________________________________________ */
-
-#obj1 {
-    display: flex;
-    align-items: stretch;  /* Asegura que los elementos ocupen la misma altura */
-    margin-bottom: 2em;
-    width: 95%;
-    margin-left: 1em;
-    margin-right: 1em;
-    margin-top: 2em;
-}
+#parr_obj,
+#object,
 .object {
-    display: flex;
-    align-items: stretch;  /* Asegura que los elementos ocupen la misma altura */
-    margin-bottom: 2em;
-    width: 95%;
-    margin-left: 1em;
-    margin-right: 1em;
-    text-align: justify;
-    margin-bottom: 2.5em;
+    display: grid;
+    grid-template-columns: minmax(250px, 0.9fr) minmax(0, 1.1fr);
+    gap: 1.4rem;
+    align-items: start;
+    margin: 0 auto 1.8rem;
+    width: 100%;
 }
 
+#parr_obj img,
+#object img,
 .object img {
-    width: 65%;           /* Mantiene la proporción de la imagen */
-    height: auto;          /* Permite ajustar la altura para que se extienda según el contenido */
-    max-height: 80%;      /* Asegura que la imagen no exceda la altura de los párrafos */
-    margin-right: 20px;    /* Espaciado entre la imagen y los párrafos */
-    border-radius: 10px;    /* Radio en las esquinas */
+    width: 100%;
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 18px rgba(20, 34, 69, 0.12);
 }
 
+#parr_obj ul,
+#object ul,
 .object ul {
-    margin-right: 1.5em;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: #ffffff;
+    border: 1px solid #dbe2f1;
+    border-radius: var(--radius-md);
+    padding: 1.1rem 1.25rem 1.1rem 2rem;
+    line-height: 1.6;
+    color: var(--color-text-soft);
 }
+
+#parr_obj ul li,
+#object ul li,
 .object ul li {
-    margin-bottom: 0.5em;
-}
-.ob1 hr {
-    width: 90%;          /* Ajusta el ancho de la línea */
-    height: 3px;         /* Ajusta el grosor de la línea */
-    background-color: #3498db; /* Cambia el color de la línea */
-    border: none;        /* Elimina el borde predeterminado */
-    margin: 0 auto;      /* Centra la línea en el contenedor */
+    margin-bottom: 0.55rem;
 }
 
-#parr_obj  ul {
-    margin-right: 1.5em;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-#parr_obj  ul li {
-    margin-bottom: 0.5em;
-}
-/* _______________________________________________________________________________________________ */
-/* __________________________________Servicios_______________________________________________ */
-
+#ob,
 #servicios_1 {
-    width: 95%;
-    align-items: center; /* Centra horizontalmente los elementos dentro del div */
-    justify-content: center; /* Centra verticalmente los elementos dentro del div */
-    margin-left: 2em;
-}
-#servicios_2 {
-    display: flex; /* Organiza los elementos en una fila */
-    justify-content: space-between; /* Añade espacio igual entre los divs */
-    align-items: stretch; /* Asegura que todos los divs tengan el mismo alto */
-    background-color: #ddd;
-    padding: 20px;
-    width: 100%; 
-    border-radius: 2em;
-    border: 1px solid #aa8bf3;
-    
-}
-.h2_servicio {
-    margin-bottom: 1em;
-    margin-top: 1em;
-    letter-spacing: 0.2em; /* Aumenta el espacio entre las letras */
-}
-.p_servicio {
-    
-    text-justify: justify;
+    width: 100%;
 }
 
-#servicios_3 {
-    display: flex; /* Organiza los elementos en una fila */
-    justify-content: space-between; /* Añade espacio igual entre los divs */
-    align-items: stretch; /* Asegura que todos los divs tengan el mismo alto */
-    background-color: #ddd;
-    padding: 20px;
-    width: 100%; 
-    border-radius: 2em;
-    border: 1px solid #aa8bf3;
-
-    
-}
 .img_servicio {
-   
-    width: 100%; /* Hace que la imagen ocupe el 100% del ancho del div */
-    height: auto; /* Mantiene la proporción de la imagen */
-    object-fit: contain; /* Asegura que toda la imagen sea visible sin recortar */
-    max-width: 100%; /* Limita el tamaño para que no exceda el contenedor */
-    border-radius: 3em;
+    object-fit: contain !important;
+    background: #f5f8ff;
 }
 
-/* _______________________________________________________________________________________________ */
-/* __________________________________ Contacto ______________________________________________ */
-.formulario-contacto {
-    display: flex;
-    flex-direction: column;
-    width: 70%; /* Ajusta el ancho según tus necesidades */
+.formulario-contacto,
+#ingresarAlMenu {
+    width: min(760px, 100%);
     margin: 0 auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 1.4rem;
+    background: #ffffff;
+    border: 1px solid #dbe3f2;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
 }
 
 .formulario-contacto label {
-    margin-top: 10px;
-    margin-bottom: 5px;
+    margin-top: 0.8rem;
+    margin-bottom: 0.35rem;
+    font-weight: 700;
+    color: #244173;
 }
 
-.formulario-contacto input, 
+.formulario-contacto input,
 .formulario-contacto textarea {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 0.8rem;
+    border-radius: 10px;
+    border: 1px solid #c8d5f0;
+    font: inherit;
+    color: var(--color-text);
 }
 
 .formulario-contacto button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
+    margin-top: 0.9rem;
+    padding: 0.9rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #0d9f55, #11b86a);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
     cursor: pointer;
 }
 
 .formulario-contacto button:hover {
-    background-color: #45a049;
+    opacity: 0.92;
 }
 
-
+#resultado {
+    width: min(760px, 100%);
+    margin: 0.9rem auto 0;
+    padding: 0.9rem 1rem;
+    border-radius: 10px;
+    font-weight: 700;
+    color: #13412a;
+    background: #ddf8e9;
+}
 
 .whatsapp-float {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 1000;
-  }
-  
-  .whatsapp-float img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .whatsapp-float img:hover {
-    transform: scale(1.1);
-  }
-  
-/* _______________________________________________________________________________________________ */
-/* __________________________________ Mi boratorio ______________________________________________ */
+    z-index: 60;
+}
 
-  #ingresarAlMenu {
-    display: flex;
-    flex-direction: column;
-    width: 70%; /* Ajusta el ancho según tus necesidades */
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+.whatsapp-float img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(8, 95, 49, 0.35);
+    transition: transform 0.2s ease;
+}
+
+.whatsapp-float img:hover {
+    transform: scale(1.08);
+}
+
+#pie_global {
+    margin-top: 2rem;
+    padding: 1rem;
+    text-align: center;
+    background: #0c1f58;
+}
+
+@media (max-width: 980px) {
+    header {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 0.6rem;
+    }
+
+    .menu ul {
+        gap: 0.1rem;
+    }
+
+    #desc_servicios,
+    #servicios_2,
+    #servicios_3 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #parr_obj,
+    #object,
+    .object {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .text-overlay,
+    #text-overlay2 {
+        padding: 1.2rem;
+    }
+
+    #desc_servicios,
+    #servicios_2,
+    #servicios_3 {
+        grid-template-columns: 1fr;
+    }
+
+    .box img {
+        height: 210px;
+    }
+}

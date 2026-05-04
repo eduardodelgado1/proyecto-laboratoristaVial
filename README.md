@@ -73,7 +73,6 @@ proyecto-laboratoristaVial/
 
 ### Diagrama de alto nivel (Mermaid)
 
-> GitHub renderiza este bloque automaticamente en la vista del repositorio.
 
 ```mermaid
 flowchart TB

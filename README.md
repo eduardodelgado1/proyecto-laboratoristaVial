@@ -162,41 +162,7 @@ Solo necesitas:
 
 ---
 
-## Ejecucion local
 
-### Opcion 1: abrir directamente
-
-Abrir `index.html` en el navegador.
-
-### Opcion 2: servidor local (recomendado)
-
-Si tienes Python:
-
-```bash
-python -m http.server 8080
-```
-
-Luego visita:
-
-- `http://localhost:8080`
-
----
-
-## Publicacion
-
-Puedes publicar en GitHub Pages, Netlify, Vercel o hosting tradicional.
-
-Antes de publicar en produccion:
-
-1. Reemplaza `https://example.com` por tu dominio real en:
-   - `sitemap.xml`
-   - `robots.txt`
-   - `index.html` (campo `url` del `JSON-LD`)
-2. Verifica que `https://tudominio.com/sitemap.xml` sea accesible.
-3. Carga el dominio en Google Search Console.
-4. Envia el sitemap desde Search Console.
-
----
 
 ## Flujo de contacto actual
 
@@ -220,20 +186,7 @@ Esto prioriza conversion rapida y elimina dependencias de backend en la version 
 
 ---
 
-## Mejoras futuras sugeridas
-
-- Integrar backend real para email (PHP/Node) con almacenamiento de leads.
-- Agregar seccion blog para estrategia SEO de contenidos.
-- Incorporar analytics de eventos (clics en WhatsApp/CTA).
-- Implementar compresion de imagenes y lazy loading.
-- Agregar pagina de casos de exito con resultados medibles.
-
----
 
 ## Autor
 
-Proyecto de sitio web para servicios profesionales de Laboratorista Vial.
-
----
-
-Si deseas, puedo preparar una segunda version del README orientada a clientes (menos tecnica) y esta mantenerla orientada a desarrolladores.
+Eduardo Delgado Pino
